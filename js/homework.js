@@ -87,19 +87,27 @@ console.log(sortArr);
 
 /*
 let arr = [7, 10, 3, 2];
-let sortArr = [];
-let n = arr.length;
-
-for(let i = 0; i < arr.length; i++){
-  for(let j = i; j % 2 == 0; j++){
-    sortArr[sortArr.length] = arr[j];
-  }
-  for(let k = i; k % 2 != 0; k++){
-    sortArr[sortArr.length] = arr[n-k];
-  }
+let firstArr = [];
+let secondArr = [];
+for (let i = 0; i < arr.length / 2; i++) {
+    firstArr[firstArr.length]=arr[i]
 }
+for (let i = arr.length-1; i>0; i--) {
+    secondArr[secondArr.length]=arr[i]
 
-console.log(sortArr);
+}
+let a = 0;
+let b = 0;
+for (let k = 0; k < arr.length; k++) {
+    if(k%2==0){
+        arr[k]=firstArr[a]
+        a++;
+    }else{
+        arr[k]=secondArr[b]
+        b++;
+    }
+}
+console.log(arr);
 */
 
 // Problem #159
@@ -322,22 +330,22 @@ console.log(collectArr, `c: ${n}`);
 
 // Problem #170
 
-
+/*
 let arr = [1, 2, -10, 3, 5];
 let r = 5;
-let a = r - arr[0];
+let a = arr[0];
+let res = Infinity;
 
 for(let i = 0; i < arr.length; i++){
-  if(arr[i] <= r){
-    if(r - arr[i] < a){
+  const t = Math.abs(arr[i] - r);
+    if(res > t){
+      res = t;
       a = arr[i];
-      // console.log(a);
     }
-  }
 }
 
-// console.log(a);
-
+console.log(a);
+*/
 
 // Problem #171
 
