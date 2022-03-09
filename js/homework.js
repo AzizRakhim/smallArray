@@ -87,27 +87,13 @@ console.log(sortArr);
 
 /*
 let arr = [7, 10, 3, 2];
-let firstArr = [];
-let secondArr = [];
-for (let i = 0; i < arr.length / 2; i++) {
-    firstArr[firstArr.length]=arr[i]
-}
-for (let i = arr.length-1; i>0; i--) {
-    secondArr[secondArr.length]=arr[i]
+let res = "";
 
+for(let i= 0; i < arr.length / 2; i++) {
+  res += arr[i] + " " + arr[arr.length - 1 - i] + " ";
 }
-let a = 0;
-let b = 0;
-for (let k = 0; k < arr.length; k++) {
-    if(k%2==0){
-        arr[k]=firstArr[a]
-        a++;
-    }else{
-        arr[k]=secondArr[b]
-        b++;
-    }
-}
-console.log(arr);
+
+console.log(res);
 */
 
 // Problem #159
@@ -349,7 +335,7 @@ console.log(a);
 
 // Problem #171
 
-/*
+
 let arr = [1, -10, 2, 1, 2, 5];
 let chooseArr = [];
 let count = 0;
@@ -360,7 +346,7 @@ for(let i = 0; i < arr.length; i++){
 }
 
 console.log(chooseArr);
-*/
+
 
 // Problem #172
 
