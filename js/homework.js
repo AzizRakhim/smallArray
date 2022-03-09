@@ -335,18 +335,27 @@ console.log(a);
 
 // Problem #171
 
-
+/*
 let arr = [1, -10, 2, 1, 2, 5];
 let chooseArr = [];
 let count = 0;
 
 for(let i = 0; i < arr.length; i++){
-  chooseArr[i] = arr[i];
-  if(arr[i] )
+  for(let j = i - 1; j >= 0; j--){
+    if(arr[j] != arr[i]){
+      count = 0; 
+    } else {
+      count = 1;
+      break;
+    }
+  }
+  if(count == 0){
+    chooseArr[chooseArr.length] = arr[i];
+  }
 }
 
 console.log(chooseArr);
-
+*/
 
 // Problem #172
 
@@ -432,29 +441,52 @@ console.log(newArr);
 // Problem #177
 
 /*
-let arr = [9, 12, 3, 2, 1];
-let newArr = [];
-let count = 0;
+let arr = [9, 14, 3, 2, 1];
+let b = [];
 
-for(let i = arr.length - 1; i >= 0; i--){
-  count = arr[i] + count;
-  newArr[i] = count;
+for(let i = 0; i < arr.length; i++){
+  let count = 0;
+  for(let j = i; j < arr.length; j++){
+    count += arr[j];
+  }
+  b[i] = count;
 }
 
-console.log(newArr);
+console.log(b);
 */
 
 // Problem #178
 
 /*
-let n = [1, 2, 10, 5, 6, 7];
-let newArr = [];
-let count = 0;
+let n = [9, 14, 3, 2, 1];
+let count = 1;
+let countArray = [];
+let otherCount = 1;
+let otherArray = [];
 
 for(let i = 0; i < n.length; i++){
   if(n[i] < n[i + 1]){
     count++;
+    countArray[countArray.length] = n[i];
+  } else{
+    countArray[countArray.length] = n[i];
+    for(let j = i + 1; j < n.length; j++){
+      if(n[j] < n[j + 1]){
+        otherCount++;
+        otherArray[otherArray.length] = n[j];
+      } else{
+        otherArray[otherArray.length] = n[j];
+        break;
+      }
+    }
+    break;
   }
+}
+
+if(count >= otherCount){
+  console.log(countArray);
+} else{
+  console.log(otherArray);
 }
 */
 
@@ -498,7 +530,7 @@ console.log(`min: ${min}, max: ${max}`);
 
 // Problem #181
 
-/*
+
 let a = [1, 't', 15, 't'];
 let b = [2, 4];
 let c = [];
@@ -511,7 +543,7 @@ for(let i = 1; i < a.length; i++){
 }
 
 console.log(c);
-*/
+
 
 // Problem #182
 
@@ -535,3 +567,168 @@ if(count != 0){
   console.log(-1);
 }
 */
+
+// Array51
+
+/*
+let n = [1, 2, 3, 4, 5, 7, 9];
+let arr = [6, 7, 8, 9, 10];
+let a = n;
+n = arr;
+arr = a;
+
+console.log(n, arr);
+*/
+
+// Array52
+
+/*
+let arr = [2, 3, 4, 5, 6];
+let b = [];
+
+for(let i = 0; i < arr.length; i++){
+  if(arr[i] < 5){
+    b[i] = 2 * arr[i];
+  } else{
+    b[i] = arr[i] / 2;
+  }
+}
+
+console.log(b);
+*/
+
+// Array53
+
+/*
+let arr = [2, 4, 1, 5, 6];
+let b = [1, 24, 5, 1, 7];
+let c = [];
+
+for(let i = 0; i < arr.length; i++){
+  if(arr[i] > b[i]){
+    c[i] = arr[i];
+  } else{
+    c[i] = b[i];
+  }
+}
+
+console.log(c);
+*/
+
+// Array54
+
+/*
+let arr = [3, 5, 2, 8, 9, 10, 12];
+let n = [];
+let count = 0;
+
+for(let i = 0; i < arr.length; i++){
+  if(arr[i] % 2 == 0){
+    n[n.length] = arr[i];
+    count++;
+  }
+}
+
+console.log(n, count);
+*/
+
+// Array55
+
+/*
+let arr = [2, 4, 1, 5, 7, 8, 1, 2];
+let n = []; 
+let count = 0;
+
+for(let i = 0; i < arr.length; i++){
+  for(let j = i; j % 2 != 0; j++){
+    n[n.length] = arr[j];
+    count++;
+  }
+}
+
+console.log(n, count);
+*/
+
+// Array56
+
+/*
+let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+let n = [];
+let count = 0;
+
+for(let i = 3; i < arr.length; i += 3){
+  n[n.length] = arr[i];
+  count++;
+}
+
+console.log(n, count);
+*/
+
+// Array57
+
+/*
+let arr = [12, 131, 34, 1234, 34, 43, 12];
+let b = [];
+
+for(let i = 0; i < arr.length; i++){
+  for(let j = i; j % 2 == 0; j++){
+    b[b.length] = arr[j];
+  }
+}
+
+for(let i = 0; i < arr.length; i++){
+  for(let j = i; j % 2 != 0; j++){
+    b[b.length] = arr[j];
+  }
+}
+
+console.log(b);
+*/
+
+// Array58
+
+/*
+let arr = [2, 3, 1, 3, 5, 4, 1];
+let b = [];
+let count = 0;
+
+for(let i = 0; i < arr.length; i++){
+  count += arr[i];
+  b[b.length] = count;
+}
+
+console.log(b);
+*/
+
+// Array59
+
+/*
+let arr = [2, 3, 1, 3, 5, 4, 1];
+let b = [];
+let count = 0;
+
+for(let i = 0; i < arr.length; i++){
+  count += arr[i] / 2;
+  b[b.length] = count;
+}
+
+console.log(b);
+*/
+
+// Array60
+
+/*
+let arr = [1, 2, 3, 4, 5, 6];
+let b = [];
+
+for(let i = 0; i < arr.length; i++){
+  let count = 0
+  for(let j = i; j < arr.length; j++){
+    count += arr[j];
+  }
+  b[i] = count;
+}
+
+console.log(b);
+*/
+
