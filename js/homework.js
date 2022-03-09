@@ -242,7 +242,34 @@ if(arr.length < 2){
 
 // Problem #166
 
+/*
+let newArr = [2, 5, -10, 12, -3, 4, -5];
+let n = true;
 
+if(newArr[0] < 0){
+  for(let i = 0; i < newArr.length; i++){
+    if(i % 2 == 0 && newArr[i] > 0){
+      n = i;
+      break
+    } else if(i % 2 != 0 && newArr[i] < 0){
+      n = i;
+      break;
+    }
+  }
+} else{
+  for(let i = 0; i < newArr.length; i++){
+    if(i % 2 == 0 && newArr[i] < 0){
+      n = i;
+      break
+    } else if(i % 2 != 0 && newArr[i] > 0){
+      n = i;
+      break;
+    }
+  }
+}
+
+console.log(n);
+*/
 
 // Problem #167
 
@@ -295,21 +322,22 @@ console.log(collectArr, `c: ${n}`);
 
 // Problem #170
 
-/*
+
 let arr = [1, 2, -10, 3, 5];
 let r = 5;
-let a = 0
+let a = r - arr[0];
 
 for(let i = 0; i < arr.length; i++){
-  a = arr[i] - r;
-  if(arr[i] - r < a){
-    a = arr[i];
-    console.log(a);
+  if(arr[i] <= r){
+    if(r - arr[i] < a){
+      a = arr[i];
+      // console.log(a);
+    }
   }
 }
 
 // console.log(a);
-*/
+
 
 // Problem #171
 
